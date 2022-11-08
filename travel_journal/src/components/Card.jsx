@@ -9,7 +9,7 @@ const Card = (props) => {
             alt="travel images" 
             className='image'
         />
-        <div>
+        <div className='card-content'>
             <div className='location-details'>
                 <img src={pin} alt="location dot" />
                 <p>{props.trip.location.toUpperCase()}</p>

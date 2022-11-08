@@ -14,7 +14,7 @@
   margin: .5em;
 }
 
-/* Card */
+/* ---------- Card ---------- */
 
 .image {
   width: 100%;
@@ -26,12 +26,27 @@
   display: flex;
 }
 
+.card-content {
+  padding: 1.5em;
+}
+
 .location-details {
   display: flex;
   align-items: center;
 }
 
-/* Pin image */
+/* Card pin image */
 .location-details > img {
+  margin-bottom: .25em;
   max-width: 20px;
+}
+
+/* Card location title */
+.location-details > p {
+  margin: 0 .5em;
+  letter-spacing: .15em;
+}
+
+.location-details > a {
+  color: #918E9B;
 }
