@@ -1,6 +1,15 @@
+/* Header */
+
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #F55A5A;
   padding: .75em;
   text-align: center;
   color: #fff;
+}
+
+.header > h3 {
+  margin: .5em;
 }
