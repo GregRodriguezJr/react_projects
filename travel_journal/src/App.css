@@ -14,6 +14,11 @@
   margin: .5em;
 }
 
+.header > img {
+  width: 100%;
+  max-width: 25px;
+}
+
 /* ---------- Card ---------- */
 
 .card-container {
