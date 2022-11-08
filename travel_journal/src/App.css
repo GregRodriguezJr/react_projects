@@ -13,3 +13,20 @@
 .header > h3 {
   margin: .5em;
 }
+
+/* Card */
+
+.image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+}
+
+.card-container {
+  display: flex;
+}
+
+.location-details {
+  display: flex;
+  align-items: center;
+}
