@@ -58,3 +58,12 @@
 .location-details > a:hover {
   color: blue;
 }
+
+.card-content > h2 {
+  font-size: 2.5rem;
+  margin-top: .25em;
+}
+
+.description {
+  max-width: 600px;
+}

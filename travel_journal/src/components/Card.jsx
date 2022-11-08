@@ -15,6 +15,13 @@ const Card = (props) => {
                 <p>{props.trip.location.toUpperCase()}</p>
                 <a href={props.trip.googleMapsUrl} target="_blank">View on google maps</a>
             </div>
+            <h2>{props.trip.title}</h2>
+            <p>
+                <strong>
+                    {`${props.trip.startDate} - ${props.trip.endDate}`}
+                </strong>
+            </p>
+            <p className='description'>{props.trip.description}</p>
         </div>
     </div>
   )
