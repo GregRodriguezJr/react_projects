@@ -1,4 +1,4 @@
-/* Header */
+/* ---------- Header ---------- */
 
 .header {
   display: flex;
@@ -16,14 +16,18 @@
 
 /* ---------- Card ---------- */
 
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2em;
+}
+
 .image {
   width: 100%;
   max-width: 300px;
   height: auto;
-}
-
-.card-container {
-  display: flex;
+  border-radius: 5px;
 }
 
 .card-content {
@@ -49,4 +53,8 @@
 
 .location-details > a {
   color: #918E9B;
+}
+
+.location-details > a:hover {
+  color: blue;
 }
