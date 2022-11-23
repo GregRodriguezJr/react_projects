@@ -1,3 +1,6 @@
+import React from 'react'
+import MeetupList from '../components/meetups/MeetupList';
+
 const DUMMY_DATA = [
     {
       id: 'm1',
@@ -19,13 +22,11 @@ const DUMMY_DATA = [
     },
   ];
 
-import React from 'react'
-
 function AllMeetups() {
   return (
     <div>
         <h1>All Meetups</h1>
-        
+        <MeetupList meetups={DUMMY_DATA}/>
     </div>
   )
 }
