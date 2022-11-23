@@ -9,6 +9,10 @@ function Todo(props) {
         setModalIsOpen(true);
     }
 
+    const closeModalHandler = () => {
+        setModalIsOpen(false);
+    }
+
   return (
     <div className="card">
         <h2>{props.text}</h2>
@@ -16,8 +20,8 @@ function Todo(props) {
             <button className="btn" onClick={deleteHandler}>Delete</button>
         </div>
         {/* If modal state is true Modal and Backdrop will show */}
-        { modalIsOpen && <Modal/>}
-        { modalIsOpen && <Backdrop/>}
+        { modalIsOpen && <Modal onConfirm={closeModalHandler} onCancel={closeModalHandler}/>}
+        { modalIsOpen && <Backdrop onCancel={closeModalHandler} />}
     </div>
   )
 }
