@@ -1,15 +1,13 @@
+import Todo from "./components/Todo"
 
 function App() {
 
   return (
     <div>
       <h1>To Do</h1>
-      <div>
-        <h2>Title</h2>
-        <div>
-          <button>Delete</button>
-        </div>
-      </div>
+      <Todo text='test prop one'/>
+      <Todo text='test prop two'/>
+      <Todo text='test prop three'/>
     </div>
   )
 }
