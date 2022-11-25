@@ -1,4 +1,4 @@
-import { StyleSheet, View, Button, TextInput } from 'react-native';
+import { StyleSheet, View, Button, TextInput, Modal } from 'react-native';
 import { useState } from 'react';
 
 function GoalInput(props) {
@@ -14,37 +14,50 @@ function GoalInput(props) {
     }
 
   return (
-    <View style={styles.inputContainer}>
-        <TextInput 
-          onChangeText={goalInputHandler} 
-          style={styles.textInput} 
-          placeholder='Your course goal'
-          value={enteredGoalText}
-        />
-        <Button 
-          onPress={addGoalHandler} 
-          title="Add Goal" 
-        />
-    </View>
+    <Modal visible={props.visible} animationType='slide'>
+        <View style={styles.inputContainer}>
+            <TextInput 
+                onChangeText={goalInputHandler} 
+                style={styles.textInput} 
+                placeholder='Your course goal'
+                value={enteredGoalText}
+            />
+            <View style={styles.buttonContainer}>
+                <View style={styles.button}>
+                    <Button onPress={addGoalHandler} title="Add Goal" />
+                </View>
+                <View style={styles.button}>
+                    <Button title='Cancel' />
+                </View>
+            </View>
+        </View>
+    </Modal>
   )
 }
 
 const styles = StyleSheet.create({
     inputContainer: {
         flex: 1,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
+        justifyContent: 'center',
         alignItems: 'center',
         marginBottom: 24,
         borderBottomWidth: 1,
-        borderBottomColor: 'grey'
+        borderBottomColor: 'grey',
+        padding: 16
       },
       textInput: {
         borderWidth: 1,
         borderColor: '#cccccc',
-        width: '70%',
-        marginRight: 8,
+        width: '90%',
         padding: 8
+      },
+      buttonContainer: {
+        marginTop: 16,
+        flexDirection: 'row',
+      },
+      button: {
+        width: '30%',
+        marginHorizontal: 8
       }
 });
 
