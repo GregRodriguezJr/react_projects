@@ -1,11 +1,11 @@
-import { View, Text, Image } from 'react-native'
+import { View, Text, Image, TextInput } from 'react-native'
 import React, { useLayoutEffect } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { 
     ChevronDownIcon,
+    MagnifyingGlassIcon,
     UserIcon,
-    SearchIcon,
     AdjustmentsVerticalIcon,
 } from 'react-native-heroicons/outline';
 
@@ -20,8 +20,7 @@ const HomeScreen = () => {
     },[]);
 
   return (
-    <SafeAreaView edges={['left', 'right']} className="bg-white">
-      <Text>
+    <SafeAreaView className="bg-white">
         {/* Header */}
         <View className="flex-row pb-3 items-center mx-4 space-x-2">
             <Image 
@@ -41,7 +40,19 @@ const HomeScreen = () => {
             <UserIcon size={35} color="#00CCBB" />
         </View>
 
-      </Text>
+        {/* Search */}
+        <View className="flex-row items-center space-x-2 pb-2 mx-4">
+            <View className="flex-row flex-1 space-x-2 bg-gray-200 p-3">
+                <MagnifyingGlassIcon color="gray" size={20} />
+                <TextInput
+                    placeholder="Restaurants and cuisines"
+                    keyboardType="default" 
+                />
+            </View>
+
+            <AdjustmentsVerticalIcon color="#00CCBB" />
+        </View>
+
     </SafeAreaView>
   )
 }
