@@ -1,7 +1,6 @@
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, Image } from 'react-native';
 import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-
 
 const HomeScreen = () => {
     // Navigation hook
@@ -12,6 +11,8 @@ const HomeScreen = () => {
         headerShown: false,
       })
     }, [])
+
+    const heroImg = require("../assets/hero.png")
 
   return (
     <SafeAreaView className="bg-white flex-1 relative">
@@ -33,7 +34,18 @@ const HomeScreen = () => {
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             </Text>
         </View>
+        
+        {/* Circle section */}
+        <View className="w-[375px] h-[375px] bg-[#00BCC9] rounded-full absolute bottom-36 -right-36"></View>
+        <View className="w-[375px] h-[375px] bg-[#E99265] rounded-full absolute -bottom-28 -left-36"></View>
 
+        {/* Image container */}
+        <View className="flex-1 relative items-center justify-center">
+            <Image
+                source={heroImg}
+                className="w-full h-full object-cover mt-20"
+            />
+        </View>
     </SafeAreaView>
   )
 }
