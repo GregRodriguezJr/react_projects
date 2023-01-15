@@ -16,17 +16,21 @@ function App() {
       amount: 400,
       date: new Date(2023, 1, 20),
     },
-    { 
-      id: "e3", 
-      title: "Mortgage", 
-      amount: 1400, 
-      date: new Date(2023, 1, 1) 
+    {
+      id: "e3",
+      title: "Mortgage",
+      amount: 1400,
+      date: new Date(2023, 1, 1),
     },
   ];
 
+  const addExpenseHandler = (expense) => {
+    console.log("App js ", expense);
+  };
+
   return (
     <>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler} />
       <Expenses expenses={expenses} />
     </>
   );
