@@ -1,37 +1,64 @@
 import { useState } from "react";
-import { TextInput, View, StyleSheet } from "react-native";
+import { TextInput, View, StyleSheet, Alert } from "react-native";
 import PrimaryBtn from "../components/PrimaryBtn";
 
 const StartGameScreen = () => {
-    const [enteredNumber, setEnteredNumber] = useState('');
+    const [enteredNumber, setEnteredNumber] = useState("");
 
     const numberInputHandler = (enteredText) => {
-        // setEnteredNumber(enteredText);
-        console.log(enteredText);
-    }
+        setEnteredNumber(enteredText);
+    };
+
+    const resetInputHandler = () => {
+        setEnteredNumber("");
+    };
+
+    const confirmInputHandler = () => {
+        const chosenNumber = parseInt(enteredNumber);
+
+        if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
+            Alert.alert(
+                "Invalid number!",
+                "Number has to be between 1 and 99",
+                [
+                    {
+                        text: "Ok",
+                        style: "destructive",
+                        onPress: resetInputHandler,
+                    },
+                ]
+            );
+            return;
+        }
+        console.log("Valid number");
+    };
 
     return (
         <View style={styles.inputContainer}>
-            <TextInput 
-                style={styles.numberInput} 
-                maxLength={2} 
-                keyboardType="number-pad" 
+            <TextInput
+                style={styles.numberInput}
+                maxLength={2}
+                keyboardType="number-pad"
                 autoCapitalize="none"
                 autoCorrect={false}
                 value={enteredNumber}
                 onChangeText={numberInputHandler}
-                />
+            />
             <View style={styles.btnsContainer}>
                 <View style={styles.btnContainer}>
-                    <PrimaryBtn>Reset</PrimaryBtn>  
+                    <PrimaryBtn onPress={resetInputHandler}>
+                        Reset
+                    </PrimaryBtn>
                 </View>
                 <View style={styles.btnContainer}>
-                    <PrimaryBtn>Confirm</PrimaryBtn>
+                    <PrimaryBtn onPress={confirmInputHandler}>
+                        Confirm
+                    </PrimaryBtn>
                 </View>
             </View>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     inputContainer: {
@@ -47,7 +74,7 @@ const styles = StyleSheet.create({
         shadowColor: "black",
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 6,
-        shadowOpacity: 0.25
+        shadowOpacity: 0.25,
     },
     numberInput: {
         height: 50,
@@ -58,14 +85,14 @@ const styles = StyleSheet.create({
         color: "#ddb52f",
         marginVertical: 8,
         fontWeight: "bold",
-        textAlign: "center"
+        textAlign: "center",
     },
     btnsContainer: {
-        flexDirection: "row"
+        flexDirection: "row",
     },
     btnContainer: {
-        flex:1
-    }
-})
+        flex: 1,
+    },
+});
 
 export default StartGameScreen;
