@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { TextInput, View, StyleSheet, Alert } from "react-native";
-import PrimaryBtn from "../components/PrimaryBtn";
+import PrimaryBtn from "../components/ui/PrimaryBtn";
 import Colors from "../constants/Colors";
 
 const StartGameScreen = (props) => {
@@ -48,9 +48,7 @@ const StartGameScreen = (props) => {
             />
             <View style={styles.btnsContainer}>
                 <View style={styles.btnContainer}>
-                    <PrimaryBtn onPress={resetInputHandler}>
-                        Reset
-                    </PrimaryBtn>
+                    <PrimaryBtn onPress={resetInputHandler}>Reset</PrimaryBtn>
                 </View>
                 <View style={styles.btnContainer}>
                     <PrimaryBtn onPress={confirmInputHandler}>
