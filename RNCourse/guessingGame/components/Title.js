@@ -1,5 +1,5 @@
 import { StyleSheet, Text } from "react-native";
-
+import Colors from "../constants/Colors";
 const Title = (props) => {
     return <Text style={styles.title}>{props.title}</Text>;
 };
@@ -11,7 +11,7 @@ const styles = StyleSheet.create({
         color: "#fff",
         textAlign: "center",
         borderWidth: 2,
-        borderColor: "#ddb52f",
+        borderColor: Colors.accent500,
         padding: 12,
     },
 });
