@@ -1,19 +1,30 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
+
+const DUMMY_EVENTS = [
+    { 
+        id: 'e1',
+        title: "Event 1"
+    },
+    { 
+        id: 'e2',
+        title: "Event 2"
+    },
+    { 
+        id: 'e3',
+        title: "Event 3"
+    },
+]
 
 const Events = () => {
     return (
         <>
             <ul>
-                <li>
-                    <NavLink to="/events/1">Event 1</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/events/2">Event 2</NavLink>
-                </li>
-                <li>
-                    <NavLink to="/events/3">Event 3</NavLink>
-                </li>
+                {DUMMY_EVENTS.map(event => 
+                    <li key={event.id}>
+                        <Link to={event.id}>{event.title}</Link>
+                    </li>
+                )}
             </ul>
         </>
     );
