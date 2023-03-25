@@ -26,6 +26,8 @@ const router = createBrowserRouter([
                     },
                     {
                         path: ":eventId",
+                        id: "event-detail",
+                        // children sharing loader, component must use useRouteLoaderData with loader ID
                         loader: eventDetailLoader,
                         children: [
                             {
